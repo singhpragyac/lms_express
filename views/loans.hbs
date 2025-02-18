@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <script src="/static/js/main.js"></script>
+    <style>
+      table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #96D4D4;
+}
+    </style>
+ </head>
+<body>
+    <table method="">
+        <tr>
+            <th for="bk_id">LOAN_ID</th>
+            <th for="title">BOOK_ID</th>
+            <th for="pubyr">PATRON_ID</th>
+            <th for="bk_id">CHECKOUT_DATE</th>
+            <th for="title">DUE_DATE</th>
+            <th for="pubyr">CREATED_ON</th>
+        </tr>
+        <tr>
+           <td> 
+                {{#each data}}
+                    {{this.LOAN_ID}}<br>
+                {{/each}}  
+            </td>   
+            <td> 
+                {{#each data}}
+                    {{this.BOOK_ID}}<br>
+                {{/each}}  
+            </td>   
+            <td> 
+                {{#each data}}
+                    {{this.PATRON_ID}}<br>
+                {{/each}}  
+            </td>   
+             <td> 
+                {{#each data}}
+                    {{this.CHECKOUT_DATE}}<br>
+                {{/each}}  
+            </td>   
+            <td> 
+                {{#each data}}
+                    {{this.DUE_DATE}}<br>
+                {{/each}}  
+            </td>   
+            <td> 
+                {{#each data}}
+                    {{this.CREATED_ON}}<br>
+                {{/each}}  
+            </td>   
+        </tr>
+    </table>
+</body>
+ 
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <script src="/static/js/main.js"></script>
+    <style>
+      table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #96D4D4;
+}
+    </style>
+ </head>
+<body>
+    <a href="/" target="_new">BACK</a>
+    {{#if new_author }}
+        <p>New Author: {{new_author}} added.</p>
+    {{/if}}
+    <table>
+        <tr>
+            <th for="bk_id">AUTHOR_ID</th>
+            <th for="title">NAME</th>
+            <th for="pubyr">CREATED_ON</th>
+            <th for="pubyr">VIEW</th>
+            <th for="pubyr">UPDATE</th>
+        </tr>
+        {{#each data}}
+            <tr>
+            <td>{{this.AUTHOR_ID}}</td>
+            <td>{{this.NAME}}</td>
+            <td>{{this.CREATED_ON}}</td>
+            <td><a href="http://localhost:3000/authors/{{this.AUTHOR_ID}}">view</a></td>
+            <td><a href="http://localhost:3000/authors/{{this.AUTHOR_ID}}/update">update</a></td>
+            </tr>
+        {{/each}}
+    </table>
+    <a href="/authors/add">ADD</a>
+</body>
+ 
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <script src="/static/js/main.js"></script>
+    <style>
+      table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #96D4D4;
+}
+    </style>
+ </head>
+<body>
+    <table method="">
+        <tr>
+            <th for="bk_id">BOOK_ID</th>
+            <th for="title">TITLE</th>
+            <th for="au_id">AUTHOR_ID</th>
+            <th for="isbn">ISBN</th>
+            <th for="pubyr">PUBLICATION_YEAR</th>
+            <th for="genre">GENRE</th>
+            <th for="ctd_on">CREATED_ON</th>
+        </tr>
+        <tr>
+           <td> 
+                {{#each data}}
+                    {{this.BOOK_ID}}<br>
+                {{/each}}  
+            </td>   
+            <td> 
+                {{#each data}}
+                    {{this.TITLE}}<br>
+                {{/each}}  
+            </td>   
+              <td> 
+                {{#each data}}
+                    {{this.AUTHOR_ID}}<br>
+                {{/each}}  
+            </td>   
+              <td> 
+                {{#each data}}
+                    {{this.ISBN}}<br>
+                {{/each}}  
+            </td>   
+              <td> 
+                {{#each data}}
+                    {{this.PUBLICATION_YEAR}}<br>
+                {{/each}}  
+            </td>   
+              <td> 
+                {{#each data}}
+                    {{this.GENRE}}<br>
+                {{/each}}  
+            </td>   
+            <td> 
+                {{#each data}}
+                    {{this.CREATED_ON}}<br>
+                {{/each}}  
+            </td>   
+        </tr>
+    </table>
+    {{!-- {{#each data}}
+        {{this.GENRE}}<br>
+    {{/each}} --}}
+</body>
+ 
+</html>

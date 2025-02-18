@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ </head>
+<body>
+    <a href="/authors" target="_new">BACK</a>
+    <form action="/authors/{{data.AUTHOR_ID}}/update/process" method="post">
+        <input type="text" id="author_id" name="author_id" value="{{data.AUTHOR_ID}}" style="visibility:hidden;">
+        <label for="aname">AUTHOR_NAME</label>
+        <input type="text" id="aname" name="author_name" value="{{data.NAME}}">
+        <input type="submit">
+    </form>
+    <p>{{message}}</p>
+</body>
+</html>
