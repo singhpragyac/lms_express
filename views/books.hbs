@@ -22,6 +22,8 @@ th, td {
             <th for="pubyr">PUBLICATION_YEAR</th>
             <th for="genre">GENRE</th>
             <th for="ctd_on">CREATED_ON</th>
+            <th for="view">VIEW</th>
+            <th for="update">UPDATE</th>
         </tr>
         <tr>
            <td> 
@@ -58,12 +60,11 @@ th, td {
                 {{#each data}}
                     {{this.CREATED_ON}}<br>
                 {{/each}}  
-            </td>   
+            </td> 
+            <td>{{#each data}}<a href="http://localhost:3000/books/{{this.BOOK_ID}}">view</a> <br>{{/each}}  </td>
+             <td>{{#each data}}<a href="http://localhost:3000/books/{{this.BOOK_ID}}/update">update</a> <br>{{/each}}  </td>
         </tr>
     </table>
-    {{!-- {{#each data}}
-        {{this.GENRE}}<br>
-    {{/each}} --}}
 </body>
  
 </html>

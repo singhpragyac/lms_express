@@ -22,7 +22,7 @@ router.get('/', function(req, res){
     });
  });
 
- router.get('/:author_id', function(req, res){
+ router.get('/:author_id([0-9]{1,4})', function(req, res){
     var auther_id = req.params.author_id;
     con.query( 'SELECT AUTHOR_ID, NAME, CREATED_ON, MODIFIED_ON FROM AUTHORS WHERE AUTHOR_ID = ?',
         [auther_id],
@@ -34,7 +34,7 @@ router.get('/', function(req, res){
     });
  });
 
- router.get('/:author_id/update', function(req, res){
+ router.get('/:author_id([0-9]{1,4})/update', function(req, res){
     var auther_id = req.params.author_id;
     con.query( 'SELECT AUTHOR_ID, NAME FROM AUTHORS WHERE AUTHOR_ID = ?',
         [auther_id],
@@ -49,7 +49,7 @@ router.get('/', function(req, res){
     });
  });
 
- router.post('/:author_id/update/process', function(req, res){
+ router.post('/:author_id([0-9]{1,4})/update/process', function(req, res){
     var f_author_id = req.body.author_id;
     var f_author_name = req.body.author_name;
     var q_author_id = req.params.author_id;
@@ -84,7 +84,7 @@ router.post('/add/process', function(req, res){
             //res.write('VALUE INSERTED');
 
         });
-        res.redirect('/authors?new_author='+ req.body.author_name );
+        res.redirect('/authors?new_author='+ req.body.author_name);
     } else {
         res.redirect('/authors/add?message=addition_failed');
     }

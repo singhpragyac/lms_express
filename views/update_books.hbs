@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ </head>
+<body>
+    <form action="/books/{{data.BOOK_ID}}/update/process" method="post">
+            <input type="number" id="a_id" name="a_id"  value="{{data.AUTHOR_ID}}" style="visibility:hidden;">
+            <label for="title">TITLE</label>
+            <input type="text" id="title" name="title" value="{{data.TITLE}}"><br>          
+            <label for="isbn">ISBN</label>
+            <input type="number" id="isbn" name="isbn" value="{{data.ISBN}}"><br>
+            <label for="p_y">PUBLICATION_YEAR</label>
+            <input type="number" id="p_y" name="publication_year" value="{{data.PUBLICATION_YEAR}}"><br>
+            <label for="genre">GENRE</label>
+            <input type="text" id="genre" name="genre" value="{{data.GENRE}}"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
