@@ -32,23 +32,23 @@ router.get('/:book_id([0-9]{1,4})/update', function(req, res){
    con.query( 'SELECT BOOK_ID, TITLE, AUTHOR_ID, ISBN, PUBLICATION_YEAR, GENRE, CREATED_ON MODIFIED_ON FROM BOOKS WHERE BOOK_ID = ?',
        [book_id],function (err, dbRes, fields) {
          if (err) {throw err;}
-       res.render('books', { data : dbRes });
+       res.render('update_books', { data : dbRes[0] });
    });
 });
 
 router.post('/:book_id([0-9]{1,4})/update/process', function(req, res){
    console.log(req.body);
    var new_title = req.body.title;
-   var author_id = req.body.author_id;
+   var book_id = req.body.book_id;
    var new_isbn = req.body.isbn;
    var new_py = req.body.publication_year;
    var new_genre = req.body.genre;
-      con.query( 'UPDATE BOOKS SET (TITLE,ISBN,PUBLICATION_YEAR,GENRE) VALUES (?,?,?,?) WHERE AUTHOR_ID = ?',
-         [new_title, author_id, new_isbn, new_py,  new_genre],
+      con.query( 'UPDATE BOOKS SET TITLE = ?,ISBN = ?,PUBLICATION_YEAR = ?,GENRE = ? WHERE BOOK_ID = ?',
+         [new_title, new_isbn, new_py, new_genre,book_id],
          function (err, dbRes, fields) {
             if (err) { throw err; }
       });
-      res.redirect('/books'+ author_id);
+      res.redirect('/books/'+ book_id);
 
 });
 

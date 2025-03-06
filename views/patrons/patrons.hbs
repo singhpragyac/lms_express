@@ -17,9 +17,11 @@ th, td {
         <tr> 
             <th for="bk_id">PATRON_ID</th>
             <th for="title">NAME</th>
-            <th for="au_id">ADDESS</th>
+            <th for="au_id">ADDRESS</th>
             <th for="isbn">PHONE_NUMBER</th>
             <th for="pubyr">CREATED_ON</th>
+            <th for="vw">VIEW</th>
+            <th for="upd">UPDATE</th>
         </tr>
         <tr>
            <td> 
@@ -34,7 +36,7 @@ th, td {
             </td>   
               <td> 
                 {{#each data}}
-                    {{this.ADDESS}}<br>
+                    {{this.ADDRESS}}<br>
                 {{/each}}  
             </td>   
               <td> 
@@ -45,6 +47,16 @@ th, td {
               <td> 
                 {{#each data}}
                     {{this.CREATED_ON}}<br>
+                {{/each}}  
+            </td>   
+            <td> 
+                {{#each data}}
+                    <a href="http://localhost:3000/patrons/{{this.PATRON_ID}}">view</a> <br>
+                {{/each}} 
+            </td>   
+             <td> 
+                {{#each data}}
+                    <a href="http://localhost:3000/patrons/{{this.PATRON_ID}}/update">update</a>  <br>
                 {{/each}}  
             </td>   
         </tr>

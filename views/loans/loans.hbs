@@ -13,7 +13,7 @@ th, td {
     </style>
  </head>
 <body>
-    <table method="">
+    <table>
         <tr>
             <th for="bk_id">LOAN_ID</th>
             <th for="title">BOOK_ID</th>
@@ -21,6 +21,8 @@ th, td {
             <th for="bk_id">CHECKOUT_DATE</th>
             <th for="title">DUE_DATE</th>
             <th for="pubyr">CREATED_ON</th>
+            <th for="vw">VIEW</th>
+            <th for="upd">UPDATE</th>
         </tr>
         <tr>
            <td> 
@@ -51,6 +53,16 @@ th, td {
             <td> 
                 {{#each data}}
                     {{this.CREATED_ON}}<br>
+                {{/each}}  
+            </td>   
+             <td> 
+                {{#each data}}
+                   <a href="http://localhost:3000/loans/{{this.LOAN_ID}}">view</a><br>
+                {{/each}}  
+            </td>   
+              <td> 
+                {{#each data}}
+                   <a href="http://localhost:3000/loans/{{this.LOAN_ID}}">update</a><br>
                 {{/each}}  
             </td>   
         </tr>

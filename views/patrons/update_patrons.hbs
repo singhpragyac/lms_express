@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <form action="/patrons/{{data.PATRON_ID}}/update/process" method="post">
+    <input type="number" id="patron_id" name="patron_id" value="{{data.PATRON_ID}}" style="visibility:hidden;">
+    <label for="name">NAME</label>
+    <input  type="text" id="name" name="name" value="{{data.NAME}}">
+     <label for="address">ADDRESS</label>
+    <input  type="text" id="name" name="address" value="{{data.ADDRESS}}">
+     <label for="NAME">PHONE_NUMBER</label>
+    <input  type="number" id="name" name="phone_number" value="{{data.PHONE_NUMBER}}">
+    <input type="submit">
+    </form>
+</body>

@@ -4,7 +4,7 @@
  </head>
 <body>
     <form action="/books/{{data.BOOK_ID}}/update/process" method="post">
-            <input type="number" id="a_id" name="a_id"  value="{{data.AUTHOR_ID}}" style="visibility:hidden;">
+            <input type="number" id="b_id" name="book_id"  value="{{data.BOOK_ID}}" style="visibility:hidden;">
             <label for="title">TITLE</label>
             <input type="text" id="title" name="title" value="{{data.TITLE}}"><br>          
             <label for="isbn">ISBN</label>

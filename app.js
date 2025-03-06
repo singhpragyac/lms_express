@@ -25,6 +25,7 @@ var loans = require('./loans');
 app.use('/static', express.static('static'));
 app.set('view engine', 'hbs');
 app.set('views','./views');
+//app.set('views','./views/patrons');
 
 // for parsing application/json
 app.use(bodyParser.json());
