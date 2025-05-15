@@ -2,17 +2,18 @@
 <html>
  <head>
     <script src="/static/js/main.js"></script>
-    <style>
-      table, th, td {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-th, td {
-  background-color: #96D4D4;
-}
-    </style>
+  <style>
+    table, th, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+    }
+    th, td {
+       background-color: #96D4D4;
+    }
+  </style>
  </head>
 <body>
+    <a href="/" target="_new">BACK</a>
     <table>
         <tr>
             <th for="bk_id">LOAN_ID</th>
@@ -62,11 +63,12 @@ th, td {
             </td>   
               <td> 
                 {{#each data}}
-                   <a href="http://localhost:3000/loans/{{this.LOAN_ID}}">update</a><br>
+                   <a href="http://localhost:3000/loans/{{this.LOAN_ID}}/update">update</a><br>
                 {{/each}}  
             </td>   
         </tr>
     </table>
+    <a href="/loans/add">ADD LOAN</a>
 </body>
  
 </html>

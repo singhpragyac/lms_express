@@ -13,7 +13,8 @@ th, td {
     </style>
  </head>
 <body>
-    <table method="">
+    <a href="/" target="_new">BACK</a>
+    <table>
         <tr>
             <th for="bk_id">BOOK_ID</th>
             <th for="title">TITLE</th>
@@ -65,6 +66,7 @@ th, td {
              <td>{{#each data}}<a href="http://localhost:3000/books/{{this.BOOK_ID}}/update">update</a> <br>{{/each}}  </td>
         </tr>
     </table>
+    <a href="/books/add">ADD BOOK</a>
 </body>
  
 </html>
